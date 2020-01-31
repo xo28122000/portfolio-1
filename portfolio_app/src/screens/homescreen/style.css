@@ -6,8 +6,8 @@
   width: 100vw;
   min-width: 350px;
   padding-top: 5vh;
-  padding-bottom: 5vh;
 
+  transition-timing-function: cubic-bezier(0.12, 0.8, 0.65, 0.28);
   -webkit-transition: background-color 1s; /* Safari prior 6.1 */
   transition: background-color 1s;
 }
@@ -15,6 +15,12 @@
 .row-division {
   height: 30vh;
   padding: 5vh;
+}
+.footer-row {
+  color: #7f7f7f;
+  padding-top: 2vh;
+  height: 3vh;
+  font-size: 10px;
 }
 
 .extra-large-letters {
@@ -24,6 +30,14 @@
 #projectText {
 }
 
-#projectText:hover {
+.buttonText {
+  display: inline-block;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 25px;
+  -webkit-transition: background-color 0.2s; /* Safari prior 6.1 */
+  transition: background-color 0.2s;
+}
+.buttonText:hover {
   background-color: rgba(228, 228, 228, 0.5);
 }
