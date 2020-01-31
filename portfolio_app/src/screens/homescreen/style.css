@@ -1,0 +1,29 @@
+#homeroot {
+  background-color: black;
+  height: 100vh;
+  /* min-height: 100vh; */
+
+  width: 100vw;
+  min-width: 350px;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+
+  -webkit-transition: background-color 1s; /* Safari prior 6.1 */
+  transition: background-color 1s;
+}
+
+.row-division {
+  height: 30vh;
+  padding: 5vh;
+}
+
+.extra-large-letters {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: calc(40px + 100%);
+}
+#projectText {
+}
+
+#projectText:hover {
+  background-color: rgba(228, 228, 228, 0.5);
+}
