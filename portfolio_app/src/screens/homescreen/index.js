@@ -69,7 +69,7 @@ class HomeScreen extends Component {
         style={{ backgroundColor: this.state.backgroundColor }}
       >
         <div className="container-fluid" style={{ height: "100%" }}>
-          <div className="row align-items-center row-division extra-large-letters ">
+          <div className="row align-items-center row-division extra-large-PressStart ">
             <div className="col" style={{ textAlign: "start" }}>
               <NavLink to="/project">
                 <div
@@ -82,7 +82,7 @@ class HomeScreen extends Component {
               </NavLink>
             </div>
           </div>
-          <div className="row align-items-center row-division extra-large-letters ">
+          <div className="row align-items-center row-division extra-large-PressStart ">
             <div className="col" style={{ textAlign: "center" }}>
               <NavLink to="/about">
                 <div
@@ -95,7 +95,7 @@ class HomeScreen extends Component {
               </NavLink>
             </div>
           </div>
-          <div className="row align-items-center row-division extra-large-letters ">
+          <div className="row align-items-center row-division extra-large-PressStart ">
             <div className="col" style={{ textAlign: "end" }}>
               <NavLink to="/contact">
                 <div

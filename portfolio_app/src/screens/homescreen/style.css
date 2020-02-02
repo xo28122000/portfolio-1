@@ -23,11 +23,9 @@
   font-size: 10px;
 }
 
-.extra-large-letters {
+.extra-large-PressStart {
   font-family: "Press Start 2P", sans-serif;
   font-size: calc(40px + 100%);
-}
-#projectText {
 }
 
 .buttonText {
