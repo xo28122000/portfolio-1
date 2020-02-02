@@ -1,82 +1,52 @@
 import React, { Component } from "react";
 import "./style.css";
 class AboutScreen extends Component {
-  state = { nextScroll: true };
+  state = {};
   render() {
-    document.addEventListener(
-      "wheel",
-      e => {
-        if (this.state.nextScroll) {
-          if (e.wheelDelta < 0) {
-            this.setState({ nextScroll: false });
-            console.log("scrolled");
-            setInterval(() => {
-              this.setState({ nextScroll: true });
-            }, 3000);
-          }
-        }
-
-        // console.log(e.deltaY);
-        // console.log(e.wheelDelta < 0);
-      },
-      true
-    );
     return (
-      <div>
-        <div id="root">
-          {/* thinsg to display:
-              who am i, 
-              where im from, 
-              what are my interests,
-              what have i studied 
-              where have i worked 
-              */}
-          <div className="container">
-            <div className="row align-items-center" style={{ height: "100vh" }}>
-              <div className="container-fluid">
-                <div className="row">
-                  <div
-                    className="col align-self-center"
-                    style={{ textAlign: "center" }}
-                  >
-                    <span className="extra-large-Cabin">I'm</span>{" "}
-                    <span className="extra-large-Pacifico">Jainam Shah</span>
-                  </div>
-                </div>
-                <div className="Cabin">
-                  <div className="row">
-                    <div
-                      className="col"
-                      style={{ textAlign: "end", paddingRight: "10vw" }}
-                    >
-                      From San Francisco
-                    </div>
-                  </div>
-                  <div className="row ">
-                    <div
-                      className="col"
-                      style={{ textAlign: "end", paddingRight: "10vw" }}
-                    >
-                      Studying computer science @SFSU
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div
-                      className="col"
-                      style={{ textAlign: "end", paddingRight: "10vw" }}
-                    >
-                      graduating 2021
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div id="aboutRoot" className="container">
+        <div
+          style={{ height: "46vh", marginTop: "27vh", marginBottom: "27vh" }}
+        >
+          <div className="centerAlignedText extra-large-PressStart" style={{}}>
+            <div className="col">Hello, I'm Jainam</div>
           </div>
-        </div>
-        <div className="container" style={{ alignItems: "end" }}>
-          <div className="row">
-            <div className="col" style={{ textAlign: "center" }}>
-              {"<<-  Scroll down  ->>"}
+
+          <div
+            className="row  PressStart"
+            style={{ fontSize: "calc(15px + 5%)", marginTop: "6vh" }}
+          >
+            <div className="col" style={{}}>
+              // I <br />
+              // code <br />
+              // live in SF, CA
+              <br />
+              // study CS @ SFSU
+              <br />
+              // am interested in
+              <br />
+              // Web Dev & Computer Vision
+            </div>
+            <div className="col" style={{}}>
+              <div style={{ marginBottom: "5px", marginTop: "5px" }}>
+                My Academics <br />
+              </div>
+              <div style={{ marginBottom: "5px", marginTop: "5px" }}>
+                My Experiences
+                <br />
+              </div>
+              <div style={{ marginBottom: "5px", marginTop: "5px" }}>
+                My Resume
+                <br />
+              </div>
+              <div style={{ marginBottom: "5px", marginTop: "5px" }}>
+                More about my personal life
+                <br />
+              </div>
+              <div style={{ marginBottom: "5px", marginTop: "5px" }}>
+                Next: Projects
+                <br />
+              </div>
             </div>
           </div>
         </div>
@@ -86,3 +56,11 @@ class AboutScreen extends Component {
 }
 
 export default AboutScreen;
+
+//  {/* thinsg to display:
+// //               who am i,
+// //               where im from,
+// //               what are my interests,
+// //               what have i studied
+// //               where have i worked
+// //               */}

@@ -1,0 +1,39 @@
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 2s ease-in;
+}
+
+/* transistion of the page _____________________________ */
+
+#root {
+  background: lightgray;
+  height: 95vh;
+  width: 100vw;
+}
+#footer {
+  font-family: "Pacifico", cursive;
+  background: lightcyan;
+  height: 5vh;
+}
+
+.extra-large-Pacifico {
+  font-family: "Pacifico", cursive;
+  font-size: calc(100px + 200%);
+}
+.extra-large-Cabin {
+  font-size: calc(50px + 100%);
+  font-family: "Cabin", sans-serif;
+}
+.Cabin {
+  font-family: "Cabin", sans-serif;
+}
+
+.vanishElement {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}

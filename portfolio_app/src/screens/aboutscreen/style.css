@@ -1,26 +1,14 @@
-.fade-enter {
-  opacity: 0;
-  z-index: 1;
+#aboutRoot {
+  background-color: lightgreen;
+}
+.centerAlignedText {
+  text-align: center;
+}
+.endAlignedText {
+  text-align: end;
 }
 
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 2s ease-in;
-}
-
-/* transistion of the page _____________________________ */
-
-#root {
-  background: lightgray;
-  height: 90vh;
-  width: 100vw;
-}
-#footer {
-  font-family: "Pacifico", cursive;
-  background: lightcyan;
-  height: 10vh;
-}
-
+/* Fonts */
 .extra-large-Pacifico {
   font-family: "Pacifico", cursive;
   font-size: calc(100px + 200%);
