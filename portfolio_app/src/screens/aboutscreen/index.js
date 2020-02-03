@@ -1,52 +1,75 @@
 import React, { Component } from "react";
 import "./style.css";
+import homecontent from "./homecontent";
 class AboutScreen extends Component {
-  state = {};
+  state = { currentContent: homecontent };
   render() {
-    return (
-      <div id="aboutRoot" className="container">
-        <div
-          style={{ height: "46vh", marginTop: "27vh", marginBottom: "27vh" }}
-        >
-          <div className="centerAlignedText extra-large-PressStart" style={{}}>
-            <div className="col">Hello, I'm Jainam</div>
-          </div>
+    const findSelectedEle = eleList => {
+      var i = 0;
+      for (i = 0; i < eleList.length; i++) {
+        if (eleList[i].id == "selectedElement") {
+          break;
+        }
+      }
+      return i;
+    };
 
+    const content1 = <div>hello here </div>;
+
+    document.addEventListener("keyup", e => {
+      if (e.code === "ArrowUp") {
+        var canSelectElements = document.getElementsByClassName("canSelect");
+        var i = findSelectedEle(canSelectElements);
+        if (i != 0) {
+          canSelectElements[i].id = "";
+          canSelectElements[i - 1].id = "selectedElement";
+        } else {
+          canSelectElements[i].id = "";
+          canSelectElements[canSelectElements.length - 1].id =
+            "selectedElement";
+        }
+      } else if (e.code === "ArrowDown") {
+        var canSelectElements = document.getElementsByClassName("canSelect");
+        var i = findSelectedEle(canSelectElements);
+        if (i != canSelectElements.length - 1) {
+          canSelectElements[i].id = "";
+          canSelectElements[i + 1].id = "selectedElement";
+        } else {
+          canSelectElements[i].id = "";
+          canSelectElements[0].id = "selectedElement";
+        }
+      } else if (e.keyCode === 13) {
+        var canSelectElements = document.getElementsByClassName("canSelect");
+        var i = findSelectedEle(canSelectElements);
+        this.setState({ currentContent: content1 });
+      } else if (e.key === "Escape") {
+        if (this.state.currentContent != homecontent) {
+          this.setState({ currentContent: homecontent });
+        }
+      } else {
+        console.log("use arrow keys and enter");
+      }
+    });
+    return (
+      <div id="aboutRoot">
+        <div className="container">
           <div
-            className="row  PressStart"
-            style={{ fontSize: "calc(15px + 5%)", marginTop: "6vh" }}
+            style={{
+              paddingTop: "25vh",
+              paddingBottom: "20vh"
+            }}
           >
-            <div className="col" style={{}}>
-              // I <br />
-              // code <br />
-              // live in SF, CA
-              <br />
-              // study CS @ SFSU
-              <br />
-              // am interested in
-              <br />
-              // Web Dev & Computer Vision
-            </div>
-            <div className="col" style={{}}>
-              <div style={{ marginBottom: "5px", marginTop: "5px" }}>
-                My Academics <br />
-              </div>
-              <div style={{ marginBottom: "5px", marginTop: "5px" }}>
-                My Experiences
-                <br />
-              </div>
-              <div style={{ marginBottom: "5px", marginTop: "5px" }}>
-                My Resume
-                <br />
-              </div>
-              <div style={{ marginBottom: "5px", marginTop: "5px" }}>
-                More about my personal life
-                <br />
-              </div>
-              <div style={{ marginBottom: "5px", marginTop: "5px" }}>
-                Next: Projects
-                <br />
-              </div>
+            <div
+              className="container-fluid"
+              style={{
+                backgroundColor: "#4bfee9",
+                borderRadius: "30px",
+                padding: "5px",
+                minHeight: "200px",
+                minWidth: "900px"
+              }}
+            >
+              <div id="displayContent">{this.state.currentContent}</div>
             </div>
           </div>
         </div>
