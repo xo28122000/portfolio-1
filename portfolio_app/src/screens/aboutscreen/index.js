@@ -5,13 +5,6 @@ import Academiccontent from "./academiccontent";
 class AboutScreen extends Component {
   state = { currentContent: Homecontent, actionListeneradded: false };
   render() {
-    const optionList = [
-      "Academics",
-      "Experiences",
-      "Resume",
-      "Personal",
-      "Next"
-    ];
     const findSelectedEle = eleList => {
       var i = 0;
       for (i = 0; i < eleList.length; i++) {
@@ -24,14 +17,13 @@ class AboutScreen extends Component {
 
     const content1 = <div>hello here </div>;
     document.onkeyup = e => {
-      if (this.state.currentContent == Homecontent) {
+      if (this.state.currentContent === Homecontent) {
+        var canSelectElements = document.getElementsByClassName("canSelect");
+        var i = findSelectedEle(canSelectElements);
         if (e.code === "ArrowUp") {
-          var canSelectElements = document.getElementsByClassName("canSelect");
-
-          var i = findSelectedEle(canSelectElements);
           canSelectElements[i].classList.remove("selectedElement");
 
-          if (i != 0) {
+          if (i !== 0) {
             canSelectElements[i - 1].classList.add("selectedElement");
           } else {
             canSelectElements[canSelectElements.length - 1].classList.add(
@@ -39,20 +31,15 @@ class AboutScreen extends Component {
             );
           }
         } else if (e.code === "ArrowDown") {
-          var canSelectElements = document.getElementsByClassName("canSelect");
-
-          var i = findSelectedEle(canSelectElements);
           canSelectElements[i].classList.remove("selectedElement");
 
-          if (i != canSelectElements.length - 1) {
+          if (i !== canSelectElements.length - 1) {
             canSelectElements[i + 1].classList.add("selectedElement");
           } else {
             canSelectElements[0].classList.add("selectedElement");
           }
         } else if (e.keyCode === 13) {
-          var canSelectElements = document.getElementsByClassName("canSelect");
-          var i = findSelectedEle(canSelectElements);
-          if (i == 0) {
+          if (i === 0) {
             this.setState({ currentContent: Academiccontent });
           } else {
             this.setState({ currentContent: content1 });
@@ -62,7 +49,7 @@ class AboutScreen extends Component {
         }
       }
       if (e.key === "Escape") {
-        if (this.state.currentContent != Homecontent) {
+        if (this.state.currentContent !== Homecontent) {
           this.setState({ currentContent: Homecontent });
         }
       } else {

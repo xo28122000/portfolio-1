@@ -17,15 +17,15 @@ const Homecontent = (
       style={{ fontSize: "calc(15px + 5%)", marginTop: "6vh" }}
     >
       <div className="col">
-        // I <br />
-        // code <br />
-        // live in SF, CA
+        {"// I"} <br />
+        {"// code"} <br />
+        {"// live in SF,"} CA
         <br />
-        // study CS @ SFSU
+        {"// study CS @ SFSU"}
         <br />
-        // am interested in
+        {"// am interested in"}
         <br />
-        // Web Dev & Computer Vision
+        {"// Web Dev & Computer Vision"}
       </div>
       {/* ["Academics","Experiences","Resume","Personal","Next"] */}
       <div className="col">
