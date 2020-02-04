@@ -1,6 +1,6 @@
 import React from "react";
 
-const homecontent = (
+const Homecontent = (
   <div
     style={{
       backgroundColor: "#60fe4b",
@@ -27,11 +27,12 @@ const homecontent = (
         <br />
         // Web Dev & Computer Vision
       </div>
+      {/* ["Academics","Experiences","Resume","Personal","Next"] */}
       <div className="col">
         <div>
           <div
-            id="selectedElement"
-            className="canSelect "
+            id="Academics"
+            className="canSelect selectedElement"
             style={{
               padding: "5px",
               display: "inline-block"
@@ -43,6 +44,7 @@ const homecontent = (
         </div>
         <div>
           <div
+            id="Experiences"
             className="canSelect"
             style={{ padding: "5px", display: "inline-block" }}
           >
@@ -52,6 +54,7 @@ const homecontent = (
         </div>
         <div>
           <div
+            id="Resume"
             className="canSelect"
             style={{ padding: "5px", display: "inline-block" }}
           >
@@ -61,6 +64,7 @@ const homecontent = (
         </div>
         <div>
           <div
+            id="Personal"
             className="canSelect"
             style={{ padding: "5px", display: "inline-block" }}
           >
@@ -70,6 +74,7 @@ const homecontent = (
         </div>
         <div>
           <div
+            id="Next"
             className="canSelect"
             style={{ padding: "5px", display: "inline-block" }}
           >
@@ -82,4 +87,4 @@ const homecontent = (
   </div>
 );
 
-export default homecontent;
+export default Homecontent;

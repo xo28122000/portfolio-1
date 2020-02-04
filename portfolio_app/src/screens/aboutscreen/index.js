@@ -1,13 +1,21 @@
 import React, { Component } from "react";
 import "./style.css";
-import homecontent from "./homecontent";
+import Homecontent from "./homecontent";
+import Academiccontent from "./academiccontent";
 class AboutScreen extends Component {
-  state = { currentContent: homecontent };
+  state = { currentContent: Homecontent, actionListeneradded: false };
   render() {
+    const optionList = [
+      "Academics",
+      "Experiences",
+      "Resume",
+      "Personal",
+      "Next"
+    ];
     const findSelectedEle = eleList => {
       var i = 0;
       for (i = 0; i < eleList.length; i++) {
-        if (eleList[i].id == "selectedElement") {
+        if (eleList[i].classList.contains("selectedElement")) {
           break;
         }
       }
@@ -15,41 +23,53 @@ class AboutScreen extends Component {
     };
 
     const content1 = <div>hello here </div>;
+    document.onkeyup = e => {
+      if (this.state.currentContent == Homecontent) {
+        if (e.code === "ArrowUp") {
+          var canSelectElements = document.getElementsByClassName("canSelect");
 
-    document.addEventListener("keyup", e => {
-      if (e.code === "ArrowUp") {
-        var canSelectElements = document.getElementsByClassName("canSelect");
-        var i = findSelectedEle(canSelectElements);
-        if (i != 0) {
-          canSelectElements[i].id = "";
-          canSelectElements[i - 1].id = "selectedElement";
+          var i = findSelectedEle(canSelectElements);
+          canSelectElements[i].classList.remove("selectedElement");
+
+          if (i != 0) {
+            canSelectElements[i - 1].classList.add("selectedElement");
+          } else {
+            canSelectElements[canSelectElements.length - 1].classList.add(
+              "selectedElement"
+            );
+          }
+        } else if (e.code === "ArrowDown") {
+          var canSelectElements = document.getElementsByClassName("canSelect");
+
+          var i = findSelectedEle(canSelectElements);
+          canSelectElements[i].classList.remove("selectedElement");
+
+          if (i != canSelectElements.length - 1) {
+            canSelectElements[i + 1].classList.add("selectedElement");
+          } else {
+            canSelectElements[0].classList.add("selectedElement");
+          }
+        } else if (e.keyCode === 13) {
+          var canSelectElements = document.getElementsByClassName("canSelect");
+          var i = findSelectedEle(canSelectElements);
+          if (i == 0) {
+            this.setState({ currentContent: Academiccontent });
+          } else {
+            this.setState({ currentContent: content1 });
+          }
         } else {
-          canSelectElements[i].id = "";
-          canSelectElements[canSelectElements.length - 1].id =
-            "selectedElement";
+          console.log("use arrow keys and enter");
         }
-      } else if (e.code === "ArrowDown") {
-        var canSelectElements = document.getElementsByClassName("canSelect");
-        var i = findSelectedEle(canSelectElements);
-        if (i != canSelectElements.length - 1) {
-          canSelectElements[i].id = "";
-          canSelectElements[i + 1].id = "selectedElement";
-        } else {
-          canSelectElements[i].id = "";
-          canSelectElements[0].id = "selectedElement";
-        }
-      } else if (e.keyCode === 13) {
-        var canSelectElements = document.getElementsByClassName("canSelect");
-        var i = findSelectedEle(canSelectElements);
-        this.setState({ currentContent: content1 });
-      } else if (e.key === "Escape") {
-        if (this.state.currentContent != homecontent) {
-          this.setState({ currentContent: homecontent });
+      }
+      if (e.key === "Escape") {
+        if (this.state.currentContent != Homecontent) {
+          this.setState({ currentContent: Homecontent });
         }
       } else {
-        console.log("use arrow keys and enter");
+        console.log("use escape to go back");
       }
-    });
+    };
+
     return (
       <div id="aboutRoot">
         <div className="container">

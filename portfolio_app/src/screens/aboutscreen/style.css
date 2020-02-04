@@ -24,7 +24,7 @@
 .Cabin {
   font-family: "Cabin", sans-serif;
 }
-#selectedElement {
+.selectedElement {
   background-color: rgba(0, 208, 255, 0.5);
   border-radius: 10px;
 }
