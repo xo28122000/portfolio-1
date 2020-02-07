@@ -1,7 +1,14 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router";
+
 import "./style.css";
+
 import Homecontent from "./homecontent";
-import Academiccontent from "./academiccontent";
+import academiccontent from "./academiccontent";
+import experiencecontent from "./experiencecontent";
+import personallifecontent from "./personallifecontent";
+import resumecontent from "./resumecontent";
+
 class AboutScreen extends Component {
   state = { currentContent: Homecontent, actionListeneradded: false };
   render() {
@@ -40,10 +47,22 @@ class AboutScreen extends Component {
           }
         } else if (e.keyCode === 13) {
           if (i === 0) {
-            this.setState({ currentContent: Academiccontent });
+            this.setState({ currentContent: academiccontent });
+          } else if (i === 1) {
+            this.setState({ currentContent: experiencecontent });
+          } else if (i === 2) {
+            this.setState({
+              currentContent: resumecontent
+            });
+          } else if (i === 3) {
+            this.setState({ currentContent: personallifecontent });
+          } else if (i === 4) {
+            this.setState({ currentContent: <Redirect to="/project" /> });
           } else {
             this.setState({ currentContent: content1 });
           }
+        } else if (e.key === "Escape") {
+          this.setState({ currentContent: <Redirect to="/" /> });
         } else {
           console.log("use arrow keys and enter");
         }
