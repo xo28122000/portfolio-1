@@ -28,3 +28,20 @@
   background-color: rgba(0, 208, 255, 0.5);
   border-radius: 10px;
 }
+
+.blinking {
+  animation: blinkingText 2s infinite;
+}
+@keyframes blinkingText {
+  0% {
+    color: RGBA(96, 253, 74, 0.3);
+  }
+
+  50% {
+    color: RGBA(96, 253, 74, 0);
+  }
+
+  100% {
+    color: RGBA(96, 253, 74, 0.3);
+  }
+}
