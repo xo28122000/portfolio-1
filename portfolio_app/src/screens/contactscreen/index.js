@@ -2,7 +2,7 @@ import React, { Component } from "react";
 class ContactScreen extends Component {
   state = {};
   render() {
-    return <div>contact</div>;
+    return <div>under construction...</div>;
   }
 }
 

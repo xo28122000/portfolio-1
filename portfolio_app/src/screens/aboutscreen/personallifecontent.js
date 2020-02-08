@@ -16,7 +16,7 @@ const personallifecontent = (
       className="row  PressStart"
       style={{ fontSize: "calc(15px + 5%)", marginTop: "6vh" }}
     >
-      here goes something
+      under construction...
     </div>
   </div>
 );

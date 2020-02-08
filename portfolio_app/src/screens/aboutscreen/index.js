@@ -113,7 +113,10 @@ class AboutScreen extends Component {
       }
       if (e.key === "Escape") {
         if (this.state.currentContent !== Homecontent) {
-          this.setState({ currentContent: Homecontent });
+          this.setState({
+            currentContent: Homecontent,
+            blinkText: navigatorText
+          });
         }
       } else {
         console.log("use escape to go back");
