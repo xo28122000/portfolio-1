@@ -56,7 +56,7 @@ const Homecontent = (
           <div
             id="Resume"
             className="canSelect"
-            style={{ padding: "5px", display: "inline-block" }}
+            style={{ padding: "5px", display: "inline-block", color: "black" }}
           >
             > My Resume
             <br />
