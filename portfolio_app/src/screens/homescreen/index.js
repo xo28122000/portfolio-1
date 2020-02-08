@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 
 import "./style.css";
 class HomeScreen extends Component {
@@ -62,12 +62,14 @@ class HomeScreen extends Component {
       });
     };
   };
+
   render() {
     return (
       <div
         id="homeroot"
         style={{ backgroundColor: this.state.backgroundColor }}
       >
+        {this.state.redirectComponent}
         <div className="container-fluid" style={{ height: "100%" }}>
           <div className="row align-items-center row-division extra-large-PressStart ">
             <div className="col" style={{ textAlign: "start" }}>

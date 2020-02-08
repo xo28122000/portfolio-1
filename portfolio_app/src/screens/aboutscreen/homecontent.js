@@ -29,10 +29,9 @@ const Homecontent = (
       </div>
       {/* ["Academics","Experiences","Resume","Personal","Next"] */}
       <div className="col">
-        <div>
+        <div className="canSelect selectedElement">
           <div
             id="Academics"
-            className="canSelect selectedElement"
             style={{
               padding: "5px",
               display: "inline-block"
@@ -42,42 +41,35 @@ const Homecontent = (
             <br />
           </div>
         </div>
-        <div>
+        <div className="canSelect">
           <div
             id="Experiences"
-            className="canSelect"
             style={{ padding: "5px", display: "inline-block" }}
           >
             > My Experiences
             <br />
           </div>
         </div>
-        <div>
+        <div className="canSelect">
           <div
             id="Resume"
-            className="canSelect"
             style={{ padding: "5px", display: "inline-block", color: "black" }}
           >
             > My Resume
             <br />
           </div>
         </div>
-        <div>
+        <div className="canSelect">
           <div
             id="Personal"
-            className="canSelect"
             style={{ padding: "5px", display: "inline-block" }}
           >
-            > More about my personal life
+            > About my personal life
             <br />
           </div>
         </div>
-        <div>
-          <div
-            id="Next"
-            className="canSelect"
-            style={{ padding: "5px", display: "inline-block" }}
-          >
+        <div className="canSelect">
+          <div id="Next" style={{ padding: "5px", display: "inline-block" }}>
             > Next: Projects
             <br />
           </div>

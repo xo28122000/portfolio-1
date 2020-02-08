@@ -14,6 +14,7 @@ class AboutScreen extends Component {
     actionListeneradded: false,
     blinkText: "Use Arrow keys to navigate, enter to view and esc to go back"
   };
+
   render() {
     const findSelectedEle = eleList => {
       var i = 0;
@@ -55,7 +56,7 @@ class AboutScreen extends Component {
     );
     const navigatorText =
       "Use Arrow keys to navigate, enter to view and esc to go back";
-    const escapeText = "Use esc to go back";
+    const escapeText = "Press esc to go back";
 
     document.onkeyup = e => {
       if (this.state.currentContent === Homecontent) {

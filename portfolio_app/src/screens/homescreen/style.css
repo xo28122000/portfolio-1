@@ -8,8 +8,8 @@
   padding-top: 5vh;
 
   transition-timing-function: cubic-bezier(0.12, 0.8, 0.65, 0.28);
-  -webkit-transition: background-color 1s; /* Safari prior 6.1 */
-  transition: background-color 1s;
+  -webkit-transition: background-color 1s, opacity 0.1s; /* Safari prior 6.1 */
+  transition: background-color 1s, opacity 0.1s;
 }
 
 .row-division {
