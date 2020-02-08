@@ -92,7 +92,7 @@ class AboutScreen extends Component {
           console.log("use arrow keys and enter");
         }
       } else if (this.state.currentContent === experiencecontent) {
-        var i = arrowNavigation(e);
+        i = arrowNavigation(e);
         if (e.keyCode === 13) {
           if (true) {
           } else {
