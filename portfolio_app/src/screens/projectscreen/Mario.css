@@ -1,0 +1,33 @@
+#marioRoot {
+  /* background-image: "assets/MarioBackground"; */
+  background-color: #9090fe;
+  height: 100%;
+  width: 100%;
+  padding: 0%;
+  position: relative;
+}
+#blockRegion {
+  background-color: beige;
+}
+#playerRegion {
+}
+#marioPlayer {
+  background-image: url(./marioChar.png);
+  background-repeat: no-repeat;
+  background-size: 37px;
+  /* transform: scaleX(-1); */
+  height: 50px;
+  width: 50px;
+  bottom: 20%;
+  margin-bottom: 0%;
+  position: absolute;
+}
+#groundRegion {
+  position: absolute;
+  background-color: darkolivegreen;
+  background-image: url(./ground.png);
+  bottom: 0%;
+  margin-bottom: 0%;
+  width: 100%;
+  height: 20%;
+}
