@@ -1,16 +1,20 @@
 import React, { Component } from "react";
 
 import "./Mario.css";
+
 class Mario extends Component {
   state = { playerLeftPosition: 500, playerBottomPosition: 20 };
   render() {
     const movementSpeed = 30;
-
+    const runchars = ["./marioRun/marioRun2", "./marioRun/marioRun3"];
     document.onkeydown = e => {
       const marioPlayer = document.getElementById("marioPlayer");
+
+      console.log(e.code === "ArrowLeft" && e.code === "ArrowUp");
       if (e.code === "ArrowLeft") {
         if (this.state.playerLeftPosition - movementSpeed >= 0) {
           marioPlayer.style.transform = "";
+          marioPlayer.style.backgroundImage = "url(" + runchars[0] + ")";
           this.setState({
             playerLeftPosition: this.state.playerLeftPosition - movementSpeed
           });
@@ -45,7 +49,8 @@ class Mario extends Component {
           style={{
             left: this.state.playerLeftPosition,
             right: "auto",
-            bottom: String(this.state.playerBottomPosition) + "%"
+            bottom: String(this.state.playerBottomPosition) + "%",
+            backgroundImage: `url(require("marioChar.png"))`
           }}
         ></div>
         <div id="groundRegion"></div>
