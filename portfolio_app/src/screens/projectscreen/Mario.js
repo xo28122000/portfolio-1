@@ -14,7 +14,7 @@ class Mario extends Component {
       if (e.code === "ArrowLeft") {
         if (this.state.playerLeftPosition - movementSpeed >= 0) {
           marioPlayer.style.transform = "";
-          marioPlayer.style.backgroundImage = "url(" + runchars[0] + ")";
+          // marioPlayer.style.backgroundImage = "url(" + runchars[0] + ")";
           this.setState({
             playerLeftPosition: this.state.playerLeftPosition - movementSpeed
           });
@@ -49,8 +49,8 @@ class Mario extends Component {
           style={{
             left: this.state.playerLeftPosition,
             right: "auto",
-            bottom: String(this.state.playerBottomPosition) + "%",
-            backgroundImage: `url(require("marioChar.png"))`
+            bottom: String(this.state.playerBottomPosition) + "%"
+            // backgroundImage: `url(require("marioChar.png"))`
           }}
         ></div>
         <div id="groundRegion"></div>
